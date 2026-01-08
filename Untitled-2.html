@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Industrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'industrial-dark': '#0F2854',
+                        'industrial-blue': '#1C4D8D',
+                        'industrial-medium': '#4988C4',
+                        'industrial-light': '#BDE8F5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(191, 232, 245, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(191, 232, 245, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .metal-texture {
+            background: linear-gradient(135deg, #1C4D8D 0%, #0F2854 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .metal-texture::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(191, 232, 245, 0.03) 2px,
+                rgba(191, 232, 245, 0.03) 4px
+            );
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 40, 84, 0.3);
+        }
+        
+        .bolt {
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #4988C4 0%, #1C4D8D 70%);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .bolt::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 4px;
+            background: #0F2854;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-industrial-dark text-industrial-light grid-bg">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-industrial-dark/95 backdrop-blur-sm border-b border-industrial-blue/30">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold tracking-wider text-industrial-light">
+                    <span class="text-industrial-medium">INDUS</span>TRIAL
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-industrial-medium transition">HOME</a>
+                    <a href="#about" class="hover:text-industrial-medium transition">ABOUT</a>
+                    <a href="#projects" class="hover:text-industrial-medium transition">PROJECTS</a>
+                    <a href="#contact" class="hover:text-industrial-medium transition">CONTACT</a>
+                </div>
+                <button class="md:hidden text-industrial-light">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 metal-texture relative">
+        <div class="absolute top-8 left-8 bolt"></div>
+        <div class="absolute top-8 right-8 bolt"></div>
+        <div class="absolute bottom-8 left-8 bolt"></div>
+        <div class="absolute bottom-8 right-8 bolt"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-6 px-6 py-2 border-2 border-industrial-medium text-industrial-medium font-bold tracking-widest text-sm">
+                PORTFOLIO
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                INDUSTRIAL <span class="text-industrial-medium">DESIGN</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 text-industrial-light/80 max-w-3xl mx-auto">
+                Menciptakan solusi engineering yang kuat, fungsional, dan inovatif untuk industri modern
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="px-8 py-4 bg-industrial-medium hover:bg-industrial-blue text-white font-bold tracking-wide transition transform hover:scale-105">
+                    LIHAT PROYEK
+                </a>
+                <a href="#contact" class="px-8 py-4 border-2 border-industrial-medium text-industrial-light hover:bg-industrial-medium/10 font-bold tracking-wide transition">
+                    HUBUNGI KAMI
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-industrial-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="text-industrial-medium font-bold tracking-widest mb-4">TENTANG KAMI</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Presisi dalam Setiap Detail</h2>
+                    <p class="text-industrial-light/80 mb-6 leading-relaxed">
+                        Kami adalah tim profesional yang berfokus pada desain dan engineering industrial. Dengan pengalaman lebih dari 10 tahun, kami menghadirkan solusi yang menggabungkan kekuatan, efisiensi, dan inovasi.
+                    </p>
+                    <p class="text-industrial-light/80 leading-relaxed">
+                        Setiap proyek kami dirancang dengan standar kualitas tertinggi, memastikan hasil yang tidak hanya memenuhi ekspektasi, tetapi melampaui standar industri.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-industrial-blue/20 border-l-4 border-industrial-medium p-6">
+                        <div class="text-4xl font-bold text-industrial-medium mb-2">150+</div>
+                        <div class="text-industrial-light/80">Proyek Selesai</div>
+                    </div>
+                    <div class="bg-industrial-blue/20 border-l-4 border-industrial-medium p-6">
+                        <div class="text-4xl font-bold text-industrial-medium mb-2">98%</div>
+                        <div class="text-industrial-light/80">Kepuasan Klien</div>
+                    </div>
+                    <div class="bg-industrial-blue/20 border-l-4 border-industrial-medium p-6">
+                        <div class="text-4xl font-bold text-industrial-medium mb-2">10+</div>
+                        <div class="text-industrial-light/80">Tahun Pengalaman</div>
+                    </div>
+                    <div class="bg-industrial-blue/20 border-l-4 border-industrial-medium p-6">
+                        <div class="text-4xl font-bold text-industrial-medium mb-2">50+</div>
+                        <div class="text-industrial-light/80">Tim Profesional</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-gradient-to-b from-industrial-dark to-industrial-blue/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-industrial-medium font-bold tracking-widest mb-4">PORTFOLIO</div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Proyek Terbaru</h2>
+                <p class="text-industrial-light/80 max-w-2xl mx-auto">
+                    Eksplorasi beberapa proyek terbaik kami yang menunjukkan keahlian dan dedikasi tim
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-industrial-blue/10 border border-industrial-blue/30 overflow-hidden hover-lift">
+                    <div class="h-64 bg-gradient-to-br from-industrial-medium to-industrial-blue flex items-center justify-center">
+                        <svg class="w-24 h-24 text-industrial-light/20" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Automated Factory System</h3>
+                        <p class="text-industrial-light/70 mb-4">Sistem otomasi pabrik terintegrasi dengan efisiensi tinggi dan monitoring real-time.</p>
+                        <a href="#" class="text-industrial-medium hover:text-industrial-light font-bold inline-flex items-center">
+                            LIHAT DETAIL →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-industrial-blue/10 border border-industrial-blue/30 overflow-hidden hover-lift">
+                    <div class="h-64 bg-gradient-to-br from-industrial-blue to-industrial-dark flex items-center justify-center">
+                        <svg class="w-24 h-24 text-industrial-light/20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Power Distribution Hub</h3>
+                        <p class="text-industrial-light/70 mb-4">Infrastruktur distribusi energi modern untuk kompleks industrial skala besar.</p>
+                        <a href="#" class="text-industrial-medium hover:text-industrial-light font-bold inline-flex items-center">
+                            LIHAT DETAIL →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-industrial-blue/10 border border-industrial-blue/30 overflow-hidden hover-lift">
+                    <div class="h-64 bg-gradient-to-br from-industrial-medium to-industrial-blue flex items-center justify-center">
+                        <svg class="w-24 h-24 text-industrial-light/20" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/>
+                            <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/>
+                            <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Storage Management System</h3>
+                        <p class="text-industrial-light/70 mb-4">Solusi warehouse modern dengan sistem tracking dan inventory otomatis.</p>
+                        <a href="#" class="text-industrial-medium hover:text-industrial-light font-bold inline-flex items-center">
+                            LIHAT DETAIL →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 metal-texture relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="text-industrial-medium font-bold tracking-widest mb-4">KONTAK</div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Mari Bekerja Sama</h2>
+                <p class="text-industrial-light/80">
+                    Diskusikan proyek Anda dengan tim kami dan wujudkan visi industrial Anda
+                </p>
+            </div>
+            
+            <div class="bg-industrial-blue/20 border border-industrial-blue/30 p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 tracking-wide">NAMA</label>
+                        <input type="text" class="w-full bg-industrial-dark border border-industrial-blue/50 px-4 py-3 focus:border-industrial-medium focus:outline-none transition" placeholder="Nama Anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 tracking-wide">EMAIL</label>
+                        <input type="email" class="w-full bg-industrial-dark border border-industrial-blue/50 px-4 py-3 focus:border-industrial-medium focus:outline-none transition" placeholder="email@example.com">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-bold mb-2 tracking-wide">SUBJEK</label>
+                    <input type="text" class="w-full bg-industrial-dark border border-industrial-blue/50 px-4 py-3 focus:border-industrial-medium focus:outline-none transition" placeholder="Subjek Pesan">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-bold mb-2 tracking-wide">PESAN</label>
+                    <textarea rows="5" class="w-full bg-industrial-dark border border-industrial-blue/50 px-4 py-3 focus:border-industrial-medium focus:outline-none transition resize-none" placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                <button class="w-full bg-industrial-medium hover:bg-industrial-blue text-white font-bold py-4 tracking-widest transition transform hover:scale-[1.02]">
+                    KIRIM PESAN
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-dark border-t border-industrial-blue/30 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="text-2xl font-bold tracking-wider mb-4">
+                        <span class="text-industrial-medium">INDUS</span>TRIAL
+                    </div>
+                    <p class="text-industrial-light/70 mb-4">
+                        Solusi engineering dan desain industrial terpercaya untuk masa depan yang lebih baik.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-wide">NAVIGASI</h4>
+                    <ul class="space-y-2 text-industrial-light/70">
+                        <li><a href="#home" class="hover:text-industrial-medium transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-industrial-medium transition">About</a></li>
+                        <li><a href="#projects" class="hover:text-industrial-medium transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-industrial-medium transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-wide">KONTAK</h4>
+                    <ul class="space-y-2 text-industrial-light/70">
+                        <li>info@industrial.com</li>
+                        <li>+62 123 4567 890</li>
+                        <li>Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-industrial-blue/30 pt-8 text-center text-industrial-light/60">
+                <p>&copy; 2026 Industrial Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
